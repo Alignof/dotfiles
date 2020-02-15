@@ -6,11 +6,11 @@ hi Comment ctermfg=green
 set t_Co=256
 
 set autoindent
-set tabstop=8 " 画面上でタブ文字が占める幅
-set softtabstop=8 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set autoindent " 改行時に前の行のインデントを継続する
-set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
-set shiftwidth=8 " smartindentで増減する幅
+set tabstop=8
+set softtabstop=8
+set autoindent  
+set smartindent 
+set shiftwidth=8
 
 augroup vimrcEx
 	au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
