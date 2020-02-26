@@ -71,6 +71,10 @@ alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 
+alias ga='git add .'
+alias gc='git commit -m '
+alias gpom='git push origin master '
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
