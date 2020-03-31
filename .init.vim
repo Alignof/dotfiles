@@ -14,15 +14,18 @@ set showtabline=1
 set wildmenu
 set wildmode=longest:list,full
 set autoindent
-set tabstop=8
-set softtabstop=8
-set smartindent
-set shiftwidth=8
+set tabstop=8 " 画面上でタブ文字が占める幅
+set softtabstop=8 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅 set autoindent " 改行時に前の行のインデントを継続する
+set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
+set shiftwidth=8 " smartindentで増減する幅
 
 augroup fileTypeIndent
     autocmd!
     autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.tex setlocal tabstop=4 softtabstop=4 shiftwidth=4
     autocmd BufNewFile,BufRead *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.css setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.scss setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
 augroup vimrcEx
@@ -76,6 +79,9 @@ imap jj <Esc>
 imap っj <Esc>
 
 set backspace=indent,eol,start
+
+let g:tex_conceal=''
+let g:vim_markdown_conceal=0
 
 "set spell
 "set spelllang=en,cjk 
