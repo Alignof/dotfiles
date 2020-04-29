@@ -61,6 +61,12 @@ set number
 set virtualedit=onemore
 set showmatch
 set wildmode=list:longest
+
+set conceallevel=0
+let g:tex_conceal=''
+let g:vim_markdown_conceal=0
+
+
 nnoremap j gj
 nnoremap k gk
 
@@ -79,9 +85,6 @@ imap jj <Esc>
 imap っj <Esc>
 
 set backspace=indent,eol,start
-
-let g:tex_conceal=''
-let g:vim_markdown_conceal=0
 
 "set spell
 "set spelllang=en,cjk 
@@ -167,9 +170,9 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 			\ "\<Plug>(neosnippet_expand_or_jump)"
 			\: "\<TAB>"
 
-if has('conceal')
-	set conceallevel=2 concealcursor=niv
-endif
+"if has('conceal')
+"	set conceallevel=2 concealcursor=niv
+"endif
 
 
 inoremap <expr><tab> pumvisible() ? "\<C-n>" :
