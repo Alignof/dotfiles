@@ -5,9 +5,10 @@ colors
 
 export PICTURES="~/Pictures"
 
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${CUDA_HOME}/lib64
-export PATH=$PATH:${CUDA_HOME}/bin
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#export QT_IM_MODULE=ibus
+#exec ibus-daemon -dx &
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -74,6 +75,8 @@ alias ll='ls -l'
 alias ga='git add .'
 alias gc='git commit -m '
 alias gpom='git push origin master '
+alias gpod='git push origin develop '
+alias glog='git log --graph --all '
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -83,6 +86,7 @@ alias mkdir='mkdir -p'
 alias python='python3'
 alias inodo='ino build && ino upload'
 alias terminal='gnome-terminal'
+alias gdb-peda='gdb -nx -ix=~/.gdbinit_peda'
 alias ivm='nvim'
 alias emacs='(){echo "
                   ■■                                        ■■                                                                                    
@@ -114,4 +118,5 @@ alias sudo='sudo '
 alias dl='docker ps -l -q'
 alias -g L='| less'
 alias -g G='| grep'
+
 
