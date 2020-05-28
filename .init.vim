@@ -61,7 +61,7 @@ set showcmd
 set number
 set virtualedit=onemore
 set showmatch
-set wildmode=list:longest
+set wildmenu wildmode=list:longest,full
 
 set conceallevel=0
 let g:tex_conceal=''
@@ -80,6 +80,9 @@ nnoremap YY gg"+yG''
 set incsearch
 set wrapscan
 set hlsearch
+set ignorecase
+set smartcase
+
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 imap jj <Esc>
