@@ -126,6 +126,8 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('Shougo/neco-vim') 
 	call dein#add('Shougo/neco-syntax')
 
+	call dein#add('ap/vim-css-color')
+
 	" Required:
 	call dein#end()
 	call dein#save_state()
