@@ -86,7 +86,7 @@ alias mkdir='mkdir -p'
 alias python='python3'
 alias inodo='ino build && ino upload'
 alias terminal='gnome-terminal'
-alias gdb-peda='gdb -nx -ix=~/.gdbinit_peda'
+alias peda='gdb -nx -ix=~/.gdbinit_peda'
 alias ivm='nvim'
 alias emacs='(){echo "
                   ■■                                        ■■                                                                                    
