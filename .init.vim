@@ -9,24 +9,22 @@ language C
 
 source ~/.vim/my_script/bracket.vim
 
-set showtabline=1
-
 set wildmenu
 set wildmode=longest:list,full
 set autoindent
-set tabstop=8 " 画面上でタブ文字が占める幅
-set softtabstop=8 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅 set autoindent " 改行時に前の行のインデントを継続する
-set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
-set shiftwidth=8 " smartindentで増減する幅
+set tabstop=8 
+set softtabstop=8 
+set shiftwidth=8
+set smartindent
 
 augroup fileTypeIndent
     autocmd!
-    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd BufNewFile,BufRead *.tex setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.yml  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.vue  setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab 
+    autocmd BufNewFile,BufRead *.py   setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.tex  setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
     autocmd BufNewFile,BufRead *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead *.vue setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd BufNewFile,BufRead *.css setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.css  setlocal tabstop=4 softtabstop=4 shiftwidth=4
     autocmd BufNewFile,BufRead *.scss setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
@@ -45,23 +43,21 @@ endfunction
 
 
 set nowrap
+set nobackup
+set noswapfile
+set number
+set hidden
+set showcmd
+set showmatch
+set showtabline=1
 set clipboard+=unnamed
-"set clipboard=exclude:.*
 set laststatus=0
 set statusline=%F%m%r%h%w\%=
 set statusline+=%{My_running()}
 set statusline+=%c,%l/%L
 set rulerformat=%100(%=%{My_running()}%c,%l/%L%)
-"set rulerformat=%100(%f%m%r%h%w%=%{My_running()}%c,%l/%L%)
-" setting
 set fenc=utf-8
-set nobackup
-set noswapfile
-set hidden
-set showcmd
-set number
 set virtualedit=onemore
-set showmatch
 set wildmenu wildmode=list:longest,full
 
 set conceallevel=0
@@ -84,19 +80,15 @@ set wrapscan
 set hlsearch
 set ignorecase
 set smartcase
+set backspace=indent,eol,start
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 imap jj <Esc>
-imap っj <Esc>
 
 nmap gl gt
 nmap gh gT
 
-set backspace=indent,eol,start
-
-"set spell
-"set spelllang=en,cjk 
 
 if !has('gui_running')
 	set timeout timeoutlen=1000 ttimeoutlen=50
@@ -161,10 +153,6 @@ let g:quickrun_config = {
 		\}
 
 
-
-"			\	"outputter/buffer/append":0,
-"			\	"outputter/buffer/split":"Uniqtab",
-
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -189,9 +177,3 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 inoremap <expr><tab> pumvisible() ? "\<C-n>" :
 			\ neosnippet#expandable_or_jumpable() ?
 			\    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-
-
-"set snippet file dir
-"let g:neosnippet#snippets_directory='~/.cache/dein/repos/github.com/Shougo/neosnippet-snippets/neosnippets,~/.vim/snippets'
-
-
