@@ -5,12 +5,23 @@ highlight LineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Re
 hi Comment ctermfg=green
 set t_Co=256
 
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.yml  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.vue  setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab 
+    autocmd BufNewFile,BufRead *.py   setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.tex  setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    autocmd BufNewFile,BufRead *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.css  setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.scss setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
+
 set autoindent
-set tabstop=8 " 画面上でタブ文字が占める幅
-set softtabstop=8 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set autoindent " 改行時に前の行のインデントを継続する
-set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
-set shiftwidth=8 " smartindentで増減する幅
+set tabstop=8 
+set softtabstop=8 
+set autoindent 
+set smartindent 
+set shiftwidth=8 
 
 augroup vimrcEx
 	au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -50,9 +61,6 @@ inoremap jj <Esc>
 
 set backspace=indent,eol,start
 
-"set spell
-"set spelllang=en,cjk 
-
 if !has('gui_running')
 	set timeout timeoutlen=1000 ttimeoutlen=50
 endif
@@ -67,21 +75,11 @@ set runtimepath+=/root/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('/root/.cache/dein')
+	let g:deoplete#enable_at_startup = 1
 	call dein#begin('/root/.cache/dein')
 
 	" Required:
 	call dein#add('/root/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-"	call dein#add('Shougo/deoplete.nvim')
-
-	"call dein#add('Shougo/neco-vim') 
-	"call dein#add('Shougo/neco-syntax')
-	"call dein#add('ujihisa/neco-look')
-	let g:deoplete#enable_at_startup = 1
-
-	" Add or remove your plugins here like this:
-	"call dein#add('Shougo/neosnippet.vim')
-	"call dein#add('Shougo/neosnippet-snippets')
 	call dein#add('sophacles/vim-processing')
 	call dein#add('thinca/vim-quickrun')
 
