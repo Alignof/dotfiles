@@ -12,14 +12,26 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 
+########################################
 re-prompt() {
     zle .reset-prompt
     zle .accept-line
 }
 
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd(){ vcs_info }
+
 zle -N accept-line re-prompt
 PROMPT="%B%F{cyan}%n%f%b%B%F{green}%~%f%b "
-RPROMPT="%B%F{yellow}[%*]%f%b"
+#RPROMPT="%B%F{yellow}[%*]%f%b"
+RPROMPT="\$vcs_info_msg_0_ %B%F{yellow}[%*]%f%b"
+########################################
 
 #type miss
 setopt correct
