@@ -84,7 +84,7 @@ set backspace=indent,eol,start
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-imap jj <Esc>
+inoremap <silent> jj <Esc>
 
 nmap gl gt
 nmap gh gT
