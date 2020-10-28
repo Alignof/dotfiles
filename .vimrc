@@ -43,7 +43,13 @@ set showcmd
 set number
 set virtualedit=onemore
 set showmatch
-set wildmode=list:longest
+set wildmenu wildmode=list:longest,full
+
+set conceallevel=0
+let g:tex_conceal=''
+let g:tex_no_error=1
+let g:vim_markdown_conceal=0
+
 nnoremap j gj
 nnoremap k gk
 
@@ -59,6 +65,10 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 inoremap jj <Esc>
 
+nmap gl gt
+nmap gh gT
+
+
 set backspace=indent,eol,start
 
 if !has('gui_running')
@@ -66,32 +76,32 @@ if !has('gui_running')
 endif
 
 "dein Scripts------------------------------------------------------------------
-if &compatible
-	set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/root/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/root/.cache/dein')
-	let g:deoplete#enable_at_startup = 1
-	call dein#begin('/root/.cache/dein')
-
-	" Required:
-	call dein#add('/root/.cache/dein/repos/github.com/Shougo/dein.vim')
-	call dein#add('sophacles/vim-processing')
-	call dein#add('thinca/vim-quickrun')
-
-
-	" Required:
-	call dein#end()
-	call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
+" if &compatible
+" 	set nocompatible               " Be iMproved
+" endif
+" 
+" " Required:
+" set runtimepath+=/root/.cache/dein/repos/github.com/Shougo/dein.vim
+" 
+" " Required:
+" if dein#load_state('/root/.cache/dein')
+" 	let g:deoplete#enable_at_startup = 1
+" 	call dein#begin('/root/.cache/dein')
+" 
+" 	" Required:
+" 	call dein#add('/root/.cache/dein/repos/github.com/Shougo/dein.vim')
+" 	call dein#add('sophacles/vim-processing')
+" 	call dein#add('thinca/vim-quickrun')
+" 
+" 
+" 	" Required:
+" 	call dein#end()
+" 	call dein#save_state()
+" endif
+" 
+" " Required:
+" filetype plugin indent on
+" syntax enable
 
 "https://qiita.com/Coolucky/items/0a96910f13586d635dc0
 "https://qiita.com/yoza/items/2f8bd33a18225754f346
