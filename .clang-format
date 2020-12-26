@@ -1,0 +1,22 @@
+BasedOnStyle:  Google # ここを上記の別のスタイルにすることで変えられる
+
+# ここから自分の好みのオプションを指定する
+IndentWidth:     8
+Language:        Cpp
+Standard:        Cpp11
+TabWidth:        8
+UseTab:          Always
+
+AlignTrailingComments: true
+AlignConsecutiveMacros: true
+AlignConsecutiveAssignments: true
+AlignOperands: true
+AllowShortBlocksOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Empty
+BreakBeforeBraces: Attach
+ColumnLimit: 0
+UseCRLF: false
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceBeforeParens: Never
