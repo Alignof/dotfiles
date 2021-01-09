@@ -157,6 +157,8 @@ alias gpom='git push origin master '
 alias gpod='git push origin develop '
 alias glog='git log --graph --all '
 
+alias format='clang-format -i'
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
