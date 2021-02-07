@@ -4,6 +4,7 @@ autoload -Uz colors
 colors
 
 export PICTURES="~/Pictures"
+export PATH=${PATH}:/opt/riscv32/bin
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -162,12 +163,11 @@ alias format='clang-format -i'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-#alias vim='nvim'
 alias mkdir='mkdir -p'
-#alias python='python3'
 alias inodo='ino build && ino upload'
 alias newterm='gnome-terminal'
 alias peda='gdb -nx -ix=~/.gdbinit_peda'
+alias riscv-gcc='/opt/riscv/bin/riscv64-unknown-linux-gnu-gcc'
 alias ivm='nvim'
 alias emacs='(){echo "
                   ■■                                        ■■                                                                                    
