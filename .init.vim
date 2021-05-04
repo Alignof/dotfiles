@@ -11,11 +11,12 @@ source ~/.vim/my_script/bracket.vim
 
 set wildmenu
 set wildmode=longest:list,full
-set autoindent
-set tabstop=8 
-set softtabstop=8 
-set shiftwidth=8
+set tabstop=4 
+set softtabstop=4 
+set shiftwidth=4
+set smarttab
 set smartindent
+set expandtab
 
 augroup fileTypeIndent
     autocmd!
@@ -58,7 +59,6 @@ set statusline+=%c,%l/%L
 set rulerformat=%100(%=%{My_running()}%c,%l/%L%)
 set fenc=utf-8
 set virtualedit=onemore
-set wildmenu wildmode=list:longest,full
 
 set conceallevel=0
 let g:tex_conceal=''
