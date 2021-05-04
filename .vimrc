@@ -5,24 +5,25 @@ highlight LineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Re
 hi Comment ctermfg=green
 set t_Co=256
 
+set wildmenu
+set wildmode=longest:list,full
+set tabstop=4 
+set softtabstop=4 
+set shiftwidth=4
+set smarttab
+set smartindent
+set expandtab
+
 augroup fileTypeIndent
     autocmd!
-    autocmd BufNewFile,BufRead *.yml    setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd BufNewFile,BufRead *.vue    setlocal tabstop=2 softtabstop=2 shiftwidth=2 
-    autocmd BufNewFile,BufRead *.py     setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead *.tex    setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead *.html   setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead *.css    setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead *.scss   setlocal tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd BufNewFile,BufRead Makefile setlocal noexpandtab
+    autocmd BufNewFile,BufRead *.yml  setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.vue  setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab 
+    autocmd BufNewFile,BufRead *.py   setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.tex  setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    autocmd BufNewFile,BufRead *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.css  setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.scss setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
-
-set autoindent
-set tabstop=8 
-set smarttab
-set smartindent 
-set shiftwidth=8 
-set softtabstop=8 
 
 augroup vimrcEx
 	au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -44,7 +45,6 @@ set showcmd
 set number
 set virtualedit=onemore
 set showmatch
-set wildmenu wildmode=list:longest,full
 
 set conceallevel=0
 let g:tex_conceal=''
