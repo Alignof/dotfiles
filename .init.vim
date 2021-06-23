@@ -1,13 +1,6 @@
-syntax on
-autocmd ColorScheme * highlight Comment ctermfg=22 guifg=#008800
-highlight LineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Red guibg=NONE
-
-hi Comment ctermfg=green
 set t_Co=256
-
+syntax enable
 language C
-
-source ~/.vim/my_script/bracket.vim
 
 set wildmenu
 set wildmode=longest:list,full
@@ -54,9 +47,7 @@ set showtabline=1
 set clipboard+=unnamed
 set laststatus=0
 set statusline=%F%m%r%h%w\%=
-set statusline+=%{My_running()}
 set statusline+=%c,%l/%L
-set rulerformat=%100(%=%{My_running()}%c,%l/%L%)
 set fenc=utf-8
 set virtualedit=onemore
 
@@ -119,6 +110,7 @@ if dein#load_state('~/.cache/dein')
 			
 	call dein#add('Shougo/neco-vim') 
 	call dein#add('Shougo/neco-syntax')
+    call dein#add('tomasr/molokai')
 
 	call dein#add('ap/vim-css-color')
 
@@ -127,9 +119,10 @@ if dein#load_state('~/.cache/dein')
 	call dein#save_state()
 endif
 
-" Required:
+"Required:
+colorscheme molokai
+highlight Normal ctermbg=none 
 filetype plugin indent on
-syntax enable
 
 "https://qiita.com/Coolucky/items/0a96910f13586d635dc0
 "https://qiita.com/yoza/items/2f8bd33a18225754f346
