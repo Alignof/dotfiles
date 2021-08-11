@@ -168,6 +168,7 @@ alias inodo='ino build && ino upload'
 alias newterm='gnome-terminal'
 alias peda='gdb -nx -ix=~/.gdbinit_peda'
 alias riscv-gcc='/opt/riscv/bin/riscv64-unknown-linux-gnu-gcc'
+alias report_builder='sudo docker run --rm --volume "$(pwd):/data" report_builder'
 alias pdf2png="convert -quality 100 -sharpen 0x1.0 -flatten -density 150"
 alias ivm='nvim'
 alias emacs='(){echo "
