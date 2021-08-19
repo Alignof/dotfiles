@@ -12,10 +12,9 @@
 set $mod Mod1
 
 
-
 # === myconf ===
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id picom
+exec --no-startup-id picom -CGb
 exec --no-startup-id fcitx
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id ~/.config/i3/script/monitor_detect.sh
@@ -27,7 +26,8 @@ bindsym Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screens
 bindsym Mod4+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-new_window none
+default_border pixel 1
+hide_edge_borders vertical
 # ==============
 
 
