@@ -1,9 +1,9 @@
-BasedOnStyle:  Google # ここを上記の別のスタイルにすることで変えられる
+BasedOnStyle:  Google
 
-IndentWidth:     8
+IndentWidth:     4
 Language:        Cpp
 Standard:        Cpp11
-TabWidth:        8
+TabWidth:        4
 UseTab:          Always
 
 AlignTrailingComments: true

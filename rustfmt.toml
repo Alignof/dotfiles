@@ -1,5 +1,5 @@
 hard_tabs = true
-tab_spaces = 8
+tab_spaces = 4
 max_width = 100
 binop_separator = "Back"
 brace_style = "PreferSameLine"
