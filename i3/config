@@ -12,6 +12,10 @@
 set $mod Mod1
 
 
+# kill focused window
+bindsym $mod+Shift+q kill
+
+
 # === myconf ===
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id picom -CGb
@@ -22,8 +26,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screenshot/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
-bindsym Mod4+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
+bindsym Print exec "maim -u -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/ScreenShot/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym Shift+Print exec "maim -u -n -s -l -c 0.157,0.333,0.466,0.4 ~/Pictures/ScreenShot/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym $mod+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 default_border pixel 1
@@ -59,9 +64,6 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal --working-directory `xcwd`
 bindsym $mod+Shift+Return exec i3-sensible-terminal
-
-# kill focused window
-bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
