@@ -15,7 +15,7 @@
        {
         "class": "^Alacritty$",
         "instance": "^Alacritty$",
-        "title": "^main_term$"
+        "title": "^primary$"
        }
     ],
     "type": "con"
@@ -46,7 +46,7 @@
                {
                 "class": "^Alacritty$",
                 "instance": "^Alacritty$",
-                "title": "^with_gotop$"
+                "title": "^gotop$"
                }
             ],
             "type": "con"
@@ -68,7 +68,7 @@
                {
                 "class": "^Alacritty$",
                 "instance": "^Alacritty$",
-                "title": "^sub_term$"
+                "title": "^secondary$"
                }
             ],
             "type": "con"
