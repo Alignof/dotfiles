@@ -29,7 +29,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym Print exec "maim -u -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/ScreenShot/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
 bindsym Shift+Print exec "maim -u -n -s -l -c 0.157,0.333,0.466,0.4 ~/Pictures/ScreenShot/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
-bindsym $mod+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
+bindsym Control+Print exec "maim -u -n -s -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 default_border pixel 2
