@@ -47,18 +47,18 @@ border-size = 1
 border-color = #222
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
+module-margin-left = 0
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-1 = siji:pixelsize=10;1
+font-2 = "IPAGothic:pixelsize=10;antialias=true;1"
 
-modules-left = bspwm i3
+modules-left = i3 spotify pulseaudio 
 modules-center = xwindow 
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery date 
+modules-right = xbacklight filesystem xkeyboard memory cpu wlan eth date 
 
 tray-position = right
 tray-padding = 2
@@ -80,7 +80,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:70:...%
+label = %title:0:62:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -88,10 +88,10 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+format-prefix-underline = #FF8800
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+label-layout-underline = #FF8800
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -100,13 +100,14 @@ label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 30
 
 mount-0 = /
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+label-mounted-underline = #0A81F5
 
 [module/bspwm]
 type = internal/bspwm
@@ -167,6 +168,18 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format = <label>
+exec = python /usr/bin/polybar-spotify  -f '{artist}:  {song}' 
+format-underline = #1db954
+;control players (optional)
+click-left = playerctl --player=spotify play-pause 
+click-right = playerctl --player=spotify next 
+click-middle = playerctl --player=spotify previous 
 
 [module/mpd]
 type = internal/mpd
@@ -221,7 +234,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp0s20f0u2
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -243,7 +256,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -269,18 +282,22 @@ time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #0A4CFF
 
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+format-volume = <bar-volume> <label-volume> 
+format-volume-prefix = " "
+format-volume-prefix-foreground = ${colors.foreground-alt}
+format-volume-underline = #ff599c
+
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
