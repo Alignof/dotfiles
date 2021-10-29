@@ -9,7 +9,7 @@ do
     if [ $st_prev != $st_next ]; then
         st_prev=$st_next
         if [ $st_next = "connected" ]; then
-	    xrandr --output eDP1 --mode 1366x768 --output DP2 --mode 1920x1080 --above eDP1
+	    xrandr --output eDP1 --mode 1366x768 --output DP2 --auto --above eDP1
         else
 	    xrandr --output eDP1 --mode 1366x768 --output DP2 --off
         fi
