@@ -1,0 +1,12 @@
+[user]
+	email = Alignof@outlook.com
+	name = Alingof
+[credential]
+	helper = store
+[core]
+	editor = nvim
+    pager = delta
+[credential "github.com"]
+	useHttpPath = true
+[interactive]
+    diffFilter = delta --color-only
