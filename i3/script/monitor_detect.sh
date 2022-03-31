@@ -9,9 +9,9 @@ do
     if [ $st_prev != $st_next ]; then
         st_prev=$st_next
         if [ $st_next = "connected" ]; then
-	    xrandr --output HDMI-0 --mode 1440x900 --output DP2 --mode 1920x1080 --above eDP1
+	    xrandr --output HDMI-0 --mode 1920x1080 --output DP-2 --mode 1920x1080 
         else
-	    xrandr --output HDMI-0 --mode 1440x900 --output DP2 --off
+	    xrandr --output HDMI-0 --mode 1920x1080 --output DP-2 --off
         fi
 	~/.fehbg
     fi

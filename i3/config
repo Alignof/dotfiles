@@ -11,6 +11,9 @@
 
 set $mod Mod1
 
+# for dual monitor 
+workspace 1 output DVI-I-1
+workspace 3 output HDMI-0
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -32,7 +35,7 @@ bindsym Shift+Print exec "maim -u -n -s -l -c 0.157,0.333,0.466,0.4 ~/Pictures/S
 bindsym Control+Print exec "maim -u -n -s -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-default_border pixel 2
+default_border pixel 4
 hide_edge_borders vertical
 # ==============
 
