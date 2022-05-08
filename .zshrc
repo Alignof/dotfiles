@@ -153,7 +153,7 @@ alias la='ls -a'
 alias ll='ls -l'
 
 alias ga='git add .'
-alias gc='git commit -m '
+alias gc='git commit -S -m '
 alias gpom='git push origin master '
 alias gpod='git push origin develop '
 alias glog='git log --graph --all '
@@ -165,38 +165,11 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias inodo='ino build && ino upload'
-alias newterm='gnome-terminal'
 alias peda='gdb -nx -ix=~/.gdbinit_peda'
 alias riscv-gcc='/opt/riscv/bin/riscv64-unknown-linux-gnu-gcc'
 alias report_builder='sudo docker run --rm --volume "$(pwd):/data" report_builder'
 alias pdf2png="convert -quality 100 -sharpen 0x1.0 -flatten -density 150"
 alias ivm='nvim'
-alias emacs='(){echo "
-                  ■■                                        ■■                                                                                    
-                 ■■■■                                      ■■■■                               ■■■■■■■             ■■■■■■           ■■■■■■■■■      
-                 ■■■■                                      ■■■■                             ■■■■■■■■■■          ■■■■■■■■■■         ■■■■■■■■■■■    
-                                                                                           ■■■■■■ ■■■■■■       ■■■■■ ■■■■■■        ■■■    ■■■■■■  
-                                                                                          ■■■■       ■■       ■■■■      ■■■■       ■■■       ■■■  
-                                                                                         ■■■■                ■■■         ■■■■      ■■■        ■■■ 
-                                                                                         ■■■                 ■■■          ■■■      ■■■        ■■■■
-■■■         ■■■   ■■      ■■   ■■■■      ■■■■               ■■       ■■■■■■             ■■■                 ■■■           ■■■      ■■■         ■■■
- ■■■        ■■    ■■      ■■  ■■■■■■■  ■■■■■■■              ■■      ■■■■■■■■■           ■■■                 ■■■            ■■■     ■■■         ■■■
- ■■■       ■■■    ■■      ■■■■■■ ■■■■ ■■■■■■■■■             ■■     ■■■■   ■■■           ■■■                 ■■■            ■■■     ■■■         ■■■
-  ■■       ■■■    ■■      ■■■■     ■■■■■    ■■■             ■■     ■■■                  ■■■                 ■■■            ■■■     ■■■          ■■
-  ■■■      ■■     ■■      ■■■      ■■■       ■■■            ■■     ■■                   ■■■                 ■■■            ■■■     ■■■          ■■
-  ■■■     ■■■     ■■      ■■       ■■■       ■■■            ■■     ■■■                  ■■■      ■■■■■■■    ■■■            ■■■     ■■■          ■■
-   ■■     ■■■     ■■      ■■       ■■■       ■■■            ■■     ■■■■■                ■■■      ■■■■■■■    ■■■            ■■■     ■■■         ■■■
-   ■■■    ■■      ■■      ■■       ■■■       ■■■            ■■       ■■■■■■             ■■■          ■■■    ■■■            ■■■     ■■■         ■■■
-   ■■■   ■■■      ■■      ■■       ■■■       ■■■            ■■         ■■■■■            ■■■          ■■■    ■■■            ■■■     ■■■         ■■■
-    ■■   ■■■      ■■      ■■       ■■■       ■■■            ■■           ■■■■           ■■■          ■■■    ■■■           ■■■      ■■■         ■■■
-    ■■■  ■■       ■■      ■■       ■■■       ■■■            ■■             ■■            ■■■         ■■■     ■■■          ■■■      ■■■        ■■■ 
-    ■■■ ■■■       ■■      ■■       ■■■       ■■■            ■■             ■■■           ■■■■        ■■■     ■■■■        ■■■■      ■■■        ■■■ 
-     ■■ ■■■       ■■      ■■       ■■■       ■■■            ■■     ■       ■■             ■■■■       ■■■      ■■■■      ■■■■       ■■■      ■■■■  
-     ■■■■■        ■■      ■■       ■■■       ■■■            ■■    ■■■■    ■■■              ■■■■■■ ■■■■■■       ■■■■■ ■■■■■■        ■■■    ■■■■■   
-      ■■■■        ■■      ■■       ■■■       ■■■            ■■     ■■■■■■■■■                ■■■■■■■■■■■         ■■■■■■■■■■         ■■■■■■■■■■■    
-      ■■■         ■■      ■■       ■■■       ■■■            ■■       ■■■■■■                   ■■■■■■■             ■■■■■■           ■■■■■■■■■      
-" && sleep 1 && if [[ "$@" =~  - ]]; then vim $2; else vim $@; fi}'
-
 alias sudo='sudo '
 alias dl='docker ps -l -q'
 alias -g L='| less'
