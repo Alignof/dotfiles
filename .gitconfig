@@ -1,6 +1,7 @@
 [user]
 	email = Alignof@outlook.com
 	name = Alingof
+    signingkey = F36AAB9B4B08501C
 [credential]
 	helper = store
 [core]
