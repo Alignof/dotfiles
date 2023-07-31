@@ -25,6 +25,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('neovim/nvim-lspconfig')
     call dein#add('tomasr/molokai')
     call dein#add('ap/vim-css-color')
+    call dein#add('kaarmu/typst.vim')
 
 	" Required:
 	call dein#end()
