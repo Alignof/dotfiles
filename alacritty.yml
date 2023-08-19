@@ -45,6 +45,6 @@ key_bindings:
    - { key: Colon, mods: Control, action: IncreaseFontSize }
 
 window:
-  opacity: 0.87
+  opacity: 0.82
   
 
