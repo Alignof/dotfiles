@@ -25,6 +25,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 default_border pixel 2
 hide_edge_borders vertical
 exec --no-startup-id fcitx
+exec --no-startup-id ~/.config/sway/script/load_layout.sh
 
 
 ### Output configuration
@@ -87,6 +88,7 @@ output * bg /home/takana/Downloads/wallpaper.jpg fill
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r restart
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
