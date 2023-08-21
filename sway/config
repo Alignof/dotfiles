@@ -26,6 +26,7 @@ default_border pixel 2
 hide_edge_borders vertical
 exec --no-startup-id fcitx
 exec --no-startup-id ~/.config/sway/script/load_layout.sh
+exec export GPG_TTY=$(tty)
 
 
 ### Output configuration
