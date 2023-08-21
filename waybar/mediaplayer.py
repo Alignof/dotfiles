@@ -115,7 +115,7 @@ class PlayerManager:
         if player_name == "spotify" and "mpris:trackid" in metadata.keys() and ":ad:" in player.props.metadata["mpris:trackid"]:
             track_info = "Advertisement"
         elif album is not None and title is not None:
-            track_info = f"{title} - <{album}>"
+            track_info = f"{title} <{album}>"
         else:
             track_info = title
 

@@ -43,6 +43,7 @@
 @define-color memory	@braqua;
 @define-color cpu	@green;
 @define-color temp	@brgreen;
+@define-color pipewire	@brgreen;
 @define-color layout	@bryellow;
 @define-color battery	@aqua;
 @define-color date	@black;
@@ -161,6 +162,11 @@
 #disk {
 	background: @disk;
 	color: @black;
+}
+
+#custom-pipewire {
+	background: @pipewire;
+	color: @white;
 }
 
 #pulseaudio {

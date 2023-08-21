@@ -22,7 +22,8 @@
 		"custom/arrow6",
 		"cpu",
 		"custom/arrow5",
-		"temperature",
+		//"temperature",
+		"custom/pipewire",
 		"custom/arrow4",
 		"battery",
 		"custom/arrow3",
@@ -143,6 +144,18 @@
 		"enable-bar-scroll": true,
 		"format": "{name}"
 	},
+
+    "custom/pipewire": {
+        "format": " {icon} ",
+        "return-type": "json",
+        "signal": 8,
+        "interval": "once",
+        "format-icons": {
+            "mute": "",
+            "default": ["", "", "", ""]
+        },
+        "exec": "pw-volume status"
+    },
 
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
