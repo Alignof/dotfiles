@@ -108,14 +108,15 @@ class PlayerManager:
     def on_metadata_changed(self, player, metadata, _=None):
         logger.debug(f"Metadata changed for player {player.props.player_name}")
         player_name = player.props.player_name
-        artist = player.get_artist()
+        album = player.get_album()
         title = player.get_title()
 
         track_info = ""
         if player_name == "spotify" and "mpris:trackid" in metadata.keys() and ":ad:" in player.props.metadata["mpris:trackid"]:
             track_info = "Advertisement"
-        elif artist is not None and title is not None:
-            track_info = f"{artist} - {title}"
+        elif album is not None and title is not None:
+            track_info = f"{title} - <{album}>"
+            print(track_info)
         else:
             track_info = title
 
