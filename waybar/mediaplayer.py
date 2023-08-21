@@ -116,7 +116,6 @@ class PlayerManager:
             track_info = "Advertisement"
         elif album is not None and title is not None:
             track_info = f"{title} - <{album}>"
-            print(track_info)
         else:
             track_info = title
 

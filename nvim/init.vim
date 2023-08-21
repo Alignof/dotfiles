@@ -38,7 +38,7 @@ set hidden
 set showcmd
 set showmatch
 set showtabline=1
-set clipboard+=unnamedplus
+set clipboard=unnamed,unnamedplus
 set laststatus=0
 set statusline=%F%m%r%h%w\%=
 set statusline+=%c,%l/%L
