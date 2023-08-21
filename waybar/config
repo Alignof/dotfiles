@@ -11,6 +11,8 @@
 
 	"modules-right": [
 		//"pulseaudio",
+		"custom/arrowlast",
+        "custom/spotify",
 		"custom/arrow9",
         "disk",
 		"custom/arrow8",
@@ -92,6 +94,15 @@
             "locked": "",
             "unlocked": ""
         }
+    },
+
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 /home/takana/.config/waybar/mediaplayer.py --player spotify",
+        "format": " {} ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
 
 	"memory": {
@@ -217,6 +228,11 @@
 	},
 
 	"custom/arrow9": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"custom/arrowlast": {
 		"format": "",
 		"tooltip": false
 	},

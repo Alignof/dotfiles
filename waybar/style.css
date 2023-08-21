@@ -14,6 +14,7 @@
 @define-color black	#282828;
 @define-color red	#cc241d;
 @define-color green	#98971a;
+@define-color deepgreen	#18971a;
 @define-color yellow	#d79921;
 @define-color blue	#458588;
 @define-color purple	#b16286;
@@ -46,6 +47,7 @@
 @define-color battery	@aqua;
 @define-color date	@black;
 @define-color time	@white;
+@define-color spotify	@deepgreen;
 
 /* Reset all styles */
 * {
@@ -186,6 +188,11 @@
 	color: @black;
 }
 
+#custom-spotify {
+	background: @spotify;
+	color: @white;
+}
+
 #keyboard-state label {
 	background: @layout;
 	color: @black;
@@ -273,6 +280,13 @@
 	font-size: 11pt;
 	/* color: @sound; */
 	color: @disk;
+	background: @spotify;
+}
+
+#custom-arrowlast {
+	font-size: 11pt;
+	/* color: @sound; */
+	color: @spotify;
 	background: transparent;
 }
 
