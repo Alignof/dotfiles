@@ -26,7 +26,6 @@ default_border pixel 2
 hide_edge_borders vertical
 exec --no-startup-id fcitx
 exec --no-startup-id ~/.config/sway/script/load_layout.sh
-exec export GPG_TTY=$(tty)
 
 bindsym XF86AudioRaiseVolume exec "pw-volume change +2.5%; pkill -RTMIN+8 waybar"
 bindsym XF86AudioLowerVolume exec "pw-volume change -2.5%; pkill -RTMIN+8 waybar"
@@ -37,6 +36,7 @@ bindsym XF86AudioMute exec "pw-volume mute toggle; pkill -RTMIN+8 waybar"
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/takana/Downloads/wallpaper.jpg fill
+#output * bg /home/takana/Downloads/Black.png fill
 #
 # Example configuration:
 #
@@ -76,7 +76,8 @@ output * bg /home/takana/Downloads/wallpaper.jpg fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $term --working-directory `swaycwd`
+    bindsym $mod+Shift+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
