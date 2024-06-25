@@ -42,8 +42,12 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 " for format
 let g:rustfmt_autosave = 1
 
-"Required:
+" Required:
 colorscheme molokai
-highlight Normal ctermbg=none 
+let g:molokai_original = 1
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 filetype plugin indent on
 
