@@ -27,7 +27,6 @@ set expandtab
 set incsearch
 set wrapscan
 set hlsearch
-set ignorecase
 set smartcase
 set backspace=indent,eol,start
 set nowrap
@@ -38,7 +37,7 @@ set hidden
 set showcmd
 set showmatch
 set showtabline=1
-set clipboard=unnamed,unnamedplus
+set clipboard+=unnamed,unnamedplus
 set laststatus=0
 set statusline=%F%m%r%h%w\%=
 set statusline+=%c,%l/%L
