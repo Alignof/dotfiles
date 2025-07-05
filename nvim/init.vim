@@ -39,11 +39,11 @@ set showmatch
 set showtabline=1
 set clipboard+=unnamed,unnamedplus
 set laststatus=0
-set statusline=%F%m%r%h%w\%=
-set statusline+=%c,%l/%L
+set cmdheight=0
 set fenc=utf-8
 set virtualedit=onemore
 set conceallevel=0
+set mouse=
 
 let g:tex_conceal=''
 let g:tex_no_error=1

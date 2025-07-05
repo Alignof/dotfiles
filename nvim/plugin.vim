@@ -26,6 +26,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tomasr/molokai')
     call dein#add('ap/vim-css-color')
     call dein#add('kaarmu/typst.vim')
+    call dein#add('nvim-lualine/lualine.nvim')
 
 	" Required:
 	call dein#end()
@@ -51,3 +52,18 @@ highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 filetype plugin indent on
 
+lua << END
+require('lualine').setup{
+    options = {
+        theme = 'molokai',
+    },
+    sections = {
+      lualine_a = {
+        {
+          'filename',
+          path = 3, -- 3: Absolute path, with tilde as the home directory
+        }
+      }
+    }
+}
+END
