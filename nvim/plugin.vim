@@ -27,6 +27,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('ap/vim-css-color')
     call dein#add('kaarmu/typst.vim')
     call dein#add('nvim-lualine/lualine.nvim')
+    call dein#add('nvim-tree/nvim-web-devicons')
 
 	" Required:
 	call dein#end()
@@ -63,7 +64,8 @@ require('lualine').setup{
           'filename',
           path = 3, -- 3: Absolute path, with tilde as the home directory
         }
-      }
+      },
+      lualine_z = {'location', 'selectioncount', 'searchcount'}
     }
 }
 END
